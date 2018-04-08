@@ -48,41 +48,58 @@
         }
       </style>
       
-      <script> 
-        $(function() {
+      <script>
+        let count = 0;
+        let congrats = function() {
+             setTimeout(function() {
+             window.alert('Congratulations!');
+          }, 500);
+        };
+        $( document ).ready(function() {
+
           $( ".draggable" ).draggable({ revert: "invalid"});
 
           $( "#droppable-red" ).droppable({
               accept: $('#draggable-red'),
               drop: function(event, ui) { 
                 $(ui.draggable).offset($(this).offset());
+                count++;
+                count === 5 && congrats();
               }
             });
           $( "#droppable-blue" ).droppable({
               accept: $('#draggable-blue'),
               drop: function(event, ui) { 
                 $(ui.draggable).offset($(this).offset());
+                count++;
+                count === 5 && congrats();
               }
             });
           $( "#droppable-green" ).droppable({
               accept: $('#draggable-green'),
               drop: function(event, ui) { 
                 $(ui.draggable).offset($(this).offset());
+                count++;
+                count === 5 && congrats();
               }
             });
           $( "#droppable-black-1" ).droppable({
               accept: $('.draggable.black'),
               drop: function(event, ui) { 
                 $(ui.draggable).offset($(this).offset());
+                count++;
+                count === 5 && congrats();
               }
             });
           $( "#droppable-black-2" ).droppable({
               accept: $('.draggable.black'),
               drop: function(event, ui) { 
                 $(ui.draggable).offset($(this).offset());
+                count++;
+                count === 5 && congrats();
               }
             });
-
+      
         });
       </script>
    </head>
@@ -104,6 +121,5 @@
         <img class='droppable' id = "droppable-black-1" src='ia-logo-dot-black.png'></img>
         <img class='droppable' id = "droppable-black-2" src='ia-logo-dot-black.png'></img>
      </div>
-     
    </body>
 </html>
