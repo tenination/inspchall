@@ -14,11 +14,16 @@
           padding-right: 2.4em;
           padding-bottom: 1.5em;
         }
+        #droppable-1 { 
+            width: 120px; height: 90px;padding: 0.5em; float: left; 
+            margin: 10px;  
+         }
       </style>
       
       <script> 
         $(function() {
-          $( ".draggable" ).draggable();
+          $( ".draggable" ).draggable({ revert: "invalid" });
+          $( "#droppable-1" ).droppable();
         });
       </script>
    </head>
@@ -31,5 +36,8 @@
      <img class = "draggable" src='ia-logo-dot-black.png'></img>
      <br />
      <img src='ia-logo-back.png'></img>
+     <div id = "droppable-1" class = "ui-widget-header">
+         <p>Drop here</p>
+      </div>
    </body>
 </html>
