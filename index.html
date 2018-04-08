@@ -50,12 +50,26 @@
       
       <script>
         let count = 0;
+        var position = $('#draggable-red').offset();
+        console.log('POSITION:', position);
+
         let congrats = function() {
              setTimeout(function() {
              window.alert('Congratulations!');
+             console.log('POSITION:', position);
           }, 500);
         };
         $( document ).ready(function() {
+          var position = $('#draggable-red').offset();
+
+          $("#reset").click(function() {
+            count = 0;
+            $(".draggable").animate({
+               top: "0px",
+               left: "0px"
+             });
+            console.log('COUNT:', count);
+          });
 
           $( ".draggable" ).draggable({ revert: "invalid"});
 
@@ -121,5 +135,6 @@
         <img class='droppable' id = "droppable-black-1" src='ia-logo-dot-black.png'></img>
         <img class='droppable' id = "droppable-black-2" src='ia-logo-dot-black.png'></img>
      </div>
+     <button id='reset'>Reset</button>
    </body>
 </html>
