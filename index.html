@@ -2,20 +2,29 @@
 <html lang = "en">
    <head>
       <meta charset = "utf-8">
-      <title>jQuery UI Droppable - Default functionality</title>
+      <title>Find the Missing Dots</title>
       <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
          rel = "stylesheet">
       <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
       <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
       <style>
+
       </style>
       
       <script> 
+        $(function() {
+          $( ".draggable" ).draggable();
+        });
       </script>
    </head>
    
    <body>
       <img src='ia-logo-back.png'></img>
+      <img class = "draggable" src='ia-logo-dot-black.png'></img>
+      <img class = "draggable" src='ia-logo-dot-black.png'></img>
+      <img class = "draggable" src='ia-logo-dot-blue.png'></img>
+      <img class = "draggable" src='ia-logo-dot-green.png'></img>
+      <img class = "draggable" src='ia-logo-dot-red.png'></img>
    </body>
 </html>
