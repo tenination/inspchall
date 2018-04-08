@@ -21,7 +21,7 @@
          }
          .droppable { 
            position: relative;
-           opacity: 1;
+           opacity: 0;
          }
          #droppable-red { 
            top: 70px;
@@ -51,12 +51,38 @@
       <script> 
         $(function() {
           $( ".draggable" ).draggable({ revert: "invalid"});
+
           $( "#droppable-red" ).droppable({
               accept: $('#draggable-red'),
               drop: function(event, ui) { 
                 $(ui.draggable).offset($(this).offset());
               }
             });
+          $( "#droppable-blue" ).droppable({
+              accept: $('#draggable-blue'),
+              drop: function(event, ui) { 
+                $(ui.draggable).offset($(this).offset());
+              }
+            });
+          $( "#droppable-green" ).droppable({
+              accept: $('#draggable-green'),
+              drop: function(event, ui) { 
+                $(ui.draggable).offset($(this).offset());
+              }
+            });
+          $( "#droppable-black-1" ).droppable({
+              accept: $('.draggable.black'),
+              drop: function(event, ui) { 
+                $(ui.draggable).offset($(this).offset());
+              }
+            });
+          $( "#droppable-black-2" ).droppable({
+              accept: $('.draggable.black'),
+              drop: function(event, ui) { 
+                $(ui.draggable).offset($(this).offset());
+              }
+            });
+
         });
       </script>
    </head>
@@ -66,8 +92,8 @@
        <img class = "draggable" id='draggable-blue' src='ia-logo-dot-blue.png'></img>
        <img class = "draggable" id='draggable-red' src='ia-logo-dot-red.png'></img>
        <img class = "draggable" id='draggable-green' src='ia-logo-dot-green.png'></img>
-       <img class = "draggable" id='draggable-black-1' src='ia-logo-dot-black.png'></img>
-       <img class = "draggable" id='draggable-black-2' src='ia-logo-dot-black.png'></img>
+       <img class = "draggable black" id='draggable-black-1' src='ia-logo-dot-black.png'></img>
+       <img class = "draggable black" id='draggable-black-2' src='ia-logo-dot-black.png'></img>
      </div>
      
      <br />
