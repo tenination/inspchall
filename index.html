@@ -9,35 +9,51 @@
       <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
       <style>
-        .draggable { 
-          padding-top: 1em;
-          padding-right: 2.4em;
-          padding-bottom: 1.5em;
-        }
-        #droppable-1 { 
-            width: 120px; height: 90px;padding: 0.5em; float: left; 
-            margin: 10px;  
+         #color-container {
+           display: flex;
+           width: 600px;
+           justify-content: space-between;
          }
+         #bg {
+           width: 600px;
+           height: 600px;
+           background-image:url('ia-logo-back.png');
+         }
+         #droppable-red { 
+           position: relative;
+           top: 70px;
+           left:455px;
+         }
+        .draggable { 
+          z-index:1;
+        }
       </style>
       
       <script> 
         $(function() {
-          $( ".draggable" ).draggable({ revert: "invalid" });
-          $( "#droppable-1" ).droppable();
+          $( ".draggable" ).draggable({ revert: "invalid"});
+          $( "#droppable-red" ).droppable({
+              drop: function(event, ui) { 
+                $(ui.draggable).offset($(this).offset());
+              }
+            });
         });
       </script>
    </head>
    
    <body>
-     <img class = "draggable" src='ia-logo-dot-blue.png'></img>
-     <img class = "draggable" src='ia-logo-dot-red.png'></img>
-     <img class = "draggable" src='ia-logo-dot-green.png'></img>
-     <img class = "draggable" src='ia-logo-dot-black.png'></img>
-     <img class = "draggable" src='ia-logo-dot-black.png'></img>
+     <div id='color-container'>
+       <img class = "draggable" src='ia-logo-dot-blue.png'></img>
+       <img class = "draggable" src='ia-logo-dot-red.png'></img>
+       <img class = "draggable" src='ia-logo-dot-green.png'></img>
+       <img class = "draggable" src='ia-logo-dot-black.png'></img>
+       <img class = "draggable" src='ia-logo-dot-black.png'></img>
+     </div>
+     
      <br />
-     <img src='ia-logo-back.png'></img>
-     <div id = "droppable-1" class = "ui-widget-header">
-         <p>Drop here</p>
-      </div>
+     <div id='bg'>
+        <img id = "droppable-red" src='ia-logo-dot-red.png'></img>
+     </div>
+     
    </body>
 </html>
