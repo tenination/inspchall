@@ -39,36 +39,30 @@
            top: 288px;
            left: 149px;
          }
-          #droppable-black-2 { 
+         #droppable-black-2 { 
            top: 190px;
            left: -314px;
          }
         .draggable { 
-          z-index:1;
+          z-index: 1;
         }
       </style>
       
       <script>
         let count = 0;
-        var position = $('#draggable-red').offset();
-        console.log('POSITION:', position);
-
         let congrats = function() {
              setTimeout(function() {
              window.alert('Congratulations!');
-             console.log('POSITION:', position);
           }, 500);
         };
         $( document ).ready(function() {
-          var position = $('#draggable-red').offset();
-
+          
           $("#reset").click(function() {
             count = 0;
             $(".draggable").animate({
                top: "0px",
                left: "0px"
              });
-            console.log('COUNT:', count);
           });
 
           $( ".draggable" ).draggable({ revert: "invalid"});
