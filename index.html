@@ -19,9 +19,11 @@
            height: 600px;
            background-image:url('ia-logo-back.png');
          }
-         #droppable-red { 
+         .droppable { 
            position: relative;
            opacity: 0;
+         }
+         #droppable-red { 
            top: 70px;
            left:455px;
          }
@@ -34,6 +36,7 @@
         $(function() {
           $( ".draggable" ).draggable({ revert: "invalid"});
           $( "#droppable-red" ).droppable({
+              accept: $('#draggable-red'),
               drop: function(event, ui) { 
                 $(ui.draggable).offset($(this).offset());
               }
@@ -44,16 +47,16 @@
    
    <body>
      <div id='color-container'>
-       <img class = "draggable" src='ia-logo-dot-blue.png'></img>
-       <img class = "draggable" src='ia-logo-dot-red.png'></img>
-       <img class = "draggable" src='ia-logo-dot-green.png'></img>
-       <img class = "draggable" src='ia-logo-dot-black.png'></img>
-       <img class = "draggable" src='ia-logo-dot-black.png'></img>
+       <img class = "draggable" id='draggable-blue' src='ia-logo-dot-blue.png'></img>
+       <img class = "draggable" id='draggable-red' src='ia-logo-dot-red.png'></img>
+       <img class = "draggable" id='draggable-green' src='ia-logo-dot-green.png'></img>
+       <img class = "draggable" id='draggable-black-1' src='ia-logo-dot-black.png'></img>
+       <img class = "draggable" id='draggable-black-2' src='ia-logo-dot-black.png'></img>
      </div>
      
      <br />
      <div id='bg'>
-        <img id = "droppable-red" src='ia-logo-dot-red.png'></img>
+        <img class='droppable' id = "droppable-red" src='ia-logo-dot-red.png'></img>
      </div>
      
    </body>
